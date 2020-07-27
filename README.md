@@ -28,7 +28,15 @@ Setup process:
 __Verification Portal__
 
 Open http://localhost:8081/cwa/teletan - this should redirect you to keycloak, where you can enter the credentials of the user that you manually created.
-After that, you will be redirected back to the verification portal where you should be able to generate a teleTAN.
+After that, you will be redirected back to the verification portal where you should be able to generate a telePIN.
+
+* Generate PIN
+
+  ![ps image](/images/generate_pin.png)
+  
+* Sample Generated PIN
+
+  ![ps image](/images/pin.png)
 
 __Verification Server__
 
