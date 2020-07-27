@@ -8,6 +8,10 @@ Please add an entry to the hosts file of your docker host computer. Open /etc/ho
 
 Setup process:
 * docker-compose up 
+  * once all services are up run `docker ps --format '{{.Names}}\t{{.ID}}\t{{.Ports}}'` to verify, your results should be as below.
+   
+   ![ps image](/images/docker_ps.png)
+  
 * Open keycloak admin interface at http://iam:8080 with user admin, password admin
 * Create a new user. Go to Users -> Add User. Enter a username, click "Email verified". After clicking save, go to "Credentials" and add a password. Uncheck "temporary", click "Set password".
 * Go to "Role Mappings" in the user submenu and add the roles c19hotline and teletan_generator.
