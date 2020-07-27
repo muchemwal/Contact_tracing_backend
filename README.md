@@ -1,5 +1,6 @@
 # Google & Apple COVID-19 exposure notification API backend
-Contact tracing backend on Docker
+
+Using open source tools only for Contact tracing backend on Docker to equip a response centre to verify COVID-19 test results for users on the Notofocation API.
 
 ## docker-compose-file
 Start the Google & Apple COVID-19 exposure notification app backend with a single docker-compose file
