@@ -8,6 +8,7 @@ Please add an entry to the hosts file of your docker host computer. Open /etc/ho
 
 Setup process:
 * docker-compose up 
+  * if you used the docker-compose.yml in this repo it will pull images i built from my DockerHub - https://hub.docker.com/u/muchemwal
   * once all services are up run `docker ps --format '{{.Names}}\t{{.ID}}\t{{.Ports}}'` to verify, your results should be as below.
    
    ![ps image](/images/docker_ps.png)
@@ -21,7 +22,8 @@ Setup process:
   
     ![ps image](/images/credentials.png)
   
-  * Go to "Role Mappings" in the user submenu and add the roles c19hotline and teletan_generator.
+  * Go to "Role Mappings" in the user submenu and add the roles c19hotline and tele
+  _generator.
 
     ![ps image](/images/roles.png)
 
