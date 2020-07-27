@@ -19,7 +19,7 @@ Setup process:
     
   * After clicking save, go to "Credentials" and add a password. Uncheck "temporary",  click "Set password".
   
-    ![ps image](/images/password.png)
+    ![ps image](/images/credentials.png)
   
   * Go to "Role Mappings" in the user submenu and add the roles c19hotline and teletan_generator.
 
