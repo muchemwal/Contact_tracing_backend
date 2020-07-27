@@ -1,0 +1,61 @@
+version: '3.3'
+
+volumes:
+  keycloak-db:
+    driver: local
+
+services:
+
+  verificationserver:
+    container_name: verificationserver
+    image: muchemwal/cwa-verification-server:latest
+    ports:
+      - "8082:8080"
+
+  iam:
+    container_name: iam
+    image: muchemwal/cwa-verification-iam:latest
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_IMPORT: /tmp/cwa-realm.json
+      SSL_KEY_STORE: /opt/jboss/keycloak/standalone/configuration/ONLY_FOR_TEST_keystore.jks
+      SSL_KEY_STORE_PASSWORD: secret
+      DB_VENDOR: postgres
+      DB_USER: admin
+      DB_PASSWORD: password
+      DB_ADDR: keycloak-db
+      DB_PORT: '5432'
+      DB_DATABASE: keycloakdb
+    volumes:
+      - "./cwa-realm.json:/tmp/cwa-realm.json"
+      - "./cwa-verification-iam/src/themes/cwa:/opt/jboss/keycloak/themes/cwa"
+    ports:
+      - "8080:7080"
+      - "8443:8443"
+    depends_on:
+      - keycloak-db
+
+  keycloak-db:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: keycloakdb
+    volumes:
+      - "./keycloak-db:/opt/jboss/keycloak/standalone/data"
+    ports:
+      - "8001:5432"
+
+  verificationportal:
+    container_name: verificationportal
+    image: muchemwal/cwa-verification-portal:latest
+    ports:
+      - "8081:8081"
+    entrypoint: "java -Dkeycloak.auth-server-url=http://iam:8080/auth -Dcwa-verification-server.url=http://verificationserver:8080 -jar app.jar"
+
+  testresultserver:
+    container_name: testresultserver
+    image: muchemwal/cwa-testresult-server:latest
+    ports:
+      - "8083:8080"
