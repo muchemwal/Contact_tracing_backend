@@ -1,4 +1,4 @@
-# Google & Apple COVID-19 exposure notification backend
+# Google & Apple COVID-19 exposure notification API backend
 Contact tracing backend on Docker
 
 ## docker-compose-file
