@@ -13,8 +13,17 @@ Setup process:
    ![ps image](/images/docker_ps.png)
   
 * Open keycloak admin interface at http://iam:8080 with user admin, password admin
-* Create a new user. Go to Users -> Add User. Enter a username, click "Email verified". After clicking save, go to "Credentials" and add a password. Uncheck "temporary", click "Set password".
-* Go to "Role Mappings" in the user submenu and add the roles c19hotline and teletan_generator.
+  * Create a new user. Go to Users -> Add User. Enter a username, click "Email verified".
+  
+    ![ps image](/images/add_user.png)
+    
+  * After clicking save, go to "Credentials" and add a password. Uncheck "temporary",  click "Set password".
+  
+    ![ps image](/images/password.png)
+  
+  * Go to "Role Mappings" in the user submenu and add the roles c19hotline and teletan_generator.
+
+    ![ps image](/images/roles.png)
 
 __Verification Portal__
 
