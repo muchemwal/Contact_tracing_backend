@@ -2,8 +2,15 @@
 
 Using open source tools only for Contact tracing backend on Docker to equip a response centre to verify COVID-19 test results for users on the Notofocation API.
 
-## docker-compose-file
-Start the Google & Apple COVID-19 exposure notification app backend with a single docker-compose file
+## The four main images for the backend are:
+
+* The Verification Server ( verification-server) helps validating whether upload requests from the mobile App are valid or not.
+* The Verification Portal ( verification-portal) allows callcentre employees to generate telePINs which are used by users of the mobile App to upload their diagnostic keys.
+* The Verification Identity and Access  (iam) ensures that only authorized health personnel get access to the Verification Portal.
+* The Test Result Server (testresultserver) receives the results from laboratories and delivers these results to the app via the verification-server.
+
+## Starting the backend
+You will start the Google & Apple COVID-19 exposure notification app backend with a single docker-compose file (docker-compose.yml)
 
 Please add an entry to the hosts file of your docker host computer. Open /etc/hosts (Windows: C:\Windows\System32\drivers\etc\hosts) and add an entry "127.0.0.1 iam".
 
