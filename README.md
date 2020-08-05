@@ -16,7 +16,7 @@ Setup process:
 * pull this repository
   * `<git pull https://github.com/muchemwal/Contact_tracing_backend.git>`.
 * change into the new directory 
-  * `<cd Contact_tracing_backend>`. 
+  * `cd Contact_tracing_backend`. 
 * Add an entry to the hosts file of your docker host computer. Open /etc/hosts (Windows: C:\Windows\System32\drivers\etc\hosts) and add an entry "127.0.0.1 iam".
 * Run `<docker-compose up>` 
   * if you used the docker-compose.yml in this repo it will pull images i built from my DockerHub - https://hub.docker.com/u/muchemwal
