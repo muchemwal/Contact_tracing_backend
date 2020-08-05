@@ -60,8 +60,9 @@ __Testresult Server__
 To set a test result: try this:
 
 curl -X POST -d "{\"id\":\"x\",\"result\":1}" -H "content-type:application/json" localhost:8083/api/v1/app/result
- * x should be a SHA256 string hash like "aa3cf384c9fb7dcc17bcefd6b43c0f1acaa53604998e7b5cbc3b41a9f349cd59" , 
- * You can use online generator like https://passwordsgenerator.net/sha256-hash-generator/ to generate a test string.
+ * **x** should be a SHA256 string hash like "aa3cf384c9fb7dcc17bcefd6b43c0f1acaa53604998e7b5cbc3b41a9f349cd59" , 
+ * You can use online generator like https://passwordsgenerator.net/sha256-hash-generator/ to generate a test string 
+   * or simply run `<head -c32 /dev/urandom | base64>` on your terminal
  
 
 The **test_results_server** swagger is below.
