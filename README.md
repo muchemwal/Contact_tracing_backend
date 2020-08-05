@@ -4,10 +4,10 @@ Using open source tools only for Contact tracing backend on Docker to equip a re
 
 ## The four main images for the backend are:
 
-* The Verification Server (verification-server) helps validating whether upload requests from the mobile App are valid or not.
-* The Verification Portal (verification-portal) allows callcentre employees to generate telePINs which are used by users of the mobile App to upload their diagnostic keys.
-* The Verification Identity and Access  (iam) ensures that only authorized health personnel get access to the Verification Portal.
-* The Test Result Server (testresultserver) receives the results from laboratories and delivers these results to the app via the verification-server.
+* The Verification Server (**verification-server**) helps validating whether upload requests from the mobile App are valid or not.
+* The Verification Portal (**verification-portal**) allows callcentre employees to generate telePINs which are used by users of the mobile App to upload their diagnostic keys.
+* The Verification Identity and Access  (**iam**) ensures that only authorized health personnel get access to the Verification Portal.
+* The Test Result Server (**testresultserver**) receives the results from laboratories and delivers these results to the app via the verification-server.
 
 ## Starting the backend
 You will start the Google & Apple COVID-19 exposure notification app backend with a single docker-compose file [docker-compose.yml](https://raw.githubusercontent.com/muchemwal/Contact_tracing_backend/master/docker-compose.yml)
